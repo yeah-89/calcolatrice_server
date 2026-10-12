@@ -44,7 +44,7 @@ public class Main {
                 default:
                     break;
             }
-            out.println("Risposta: " );
+            out.println("Risposta: " + ris);
         }
 
         System.out.println("Disconnesso");
