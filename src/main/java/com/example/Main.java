@@ -18,9 +18,9 @@ public class Main {
         PrintWriter out = new PrintWriter(s.getOutputStream(), true);
 
         while (true) {
+            String str= in.readLine();
             Double num1=Double.parseDouble(in.readLine());
             Double num2=Double.parseDouble(in.readLine());
-            String str= in.readLine();
             
 
             if(num1==0 && num2==0){
@@ -39,8 +39,15 @@ public class Main {
                     ris=num1*num2;
                     break;
                 case "/":
-                    ris=num1/num2;
+                    if(num2==0){
+                        out.println("ERR-0:divided_by_zero");
+                        break;
+                    }else{
+                        ris=num1/num2;
+                    }
                     break;
+                case "exit":
+                    return;
                 default:
                     break;
             }
