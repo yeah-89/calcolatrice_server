@@ -17,7 +17,9 @@ public class Main {
         BufferedReader in = new BufferedReader(new InputStreamReader(s.getInputStream()));
         PrintWriter out = new PrintWriter(s.getOutputStream(), true);
 
-        while (true) {
+        boolean var=true;
+
+        while (var) {
             String str= in.readLine();
             Double num1=Double.parseDouble(in.readLine());
             Double num2=Double.parseDouble(in.readLine());
@@ -47,13 +49,14 @@ public class Main {
                     }
                     break;
                 case "exit":
-                    return;
+                    System.out.println("Disconnesso");
+                    var=false;
+                    break;
                 default:
                     break;
             }
             out.println("Risposta: " + ris);
         }
 
-        System.out.println("Disconnesso");
     }
 }
