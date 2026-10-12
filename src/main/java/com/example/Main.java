@@ -18,13 +18,32 @@ public class Main {
         PrintWriter out = new PrintWriter(s.getOutputStream(), true);
 
         boolean var=true;
+        String str="";
+        Double num1=0.0;
+        Double num2=0.0;
+        boolean datiValidi= false;
 
         while (var) {
-            String str= in.readLine();
-            Double num1=Double.parseDouble(in.readLine());
-            Double num2=Double.parseDouble(in.readLine());
-            
+            do {
+                try {
+                    str= in.readLine();
+                    num1=Double.parseDouble(in.readLine());
+                    num2=Double.parseDouble(in.readLine());
+                    if (str.equals("+") || str.equals("-") || str.equals("/") || str.equals("*") || str.equals("exit")) {
+                        datiValidi=true;
+                    } else {
+                        out.println("opertatore non valido");
+                    }
 
+                    
+                } catch (NumberFormatException e) {
+                    out.println("Errore: inserimento numeri sbagliato");
+                    datiValidi=false;
+                }
+                
+                    
+            } while (datiValidi);
+                
             if(num1==0 && num2==0){
                 break;
             }
